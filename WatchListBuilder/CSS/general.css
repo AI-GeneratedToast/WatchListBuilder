@@ -1,0 +1,28 @@
+/*REUSABLE CLASSES*/
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: 0px;
+}
+
+.navbar{
+    background-color: #C8B6FF;
+}
+
+.bodyColor{
+    background-color: #E7C6FF;
+}
+
+.errorMessage{
+    color: red;
+    font-size: 0.8rem;
+}
+
+.succes{
+    color: green;
+    font-size: 0.8rem;
+}
+
+.welcome{
+    background-color: #C8B6FF;
+}

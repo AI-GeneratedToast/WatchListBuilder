@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS/general.css"  type="text/css">
+    <script src="../JS/jquery-3.1.1.min.js"></script>
+    <title>Log In</title>
+    <script>
+      $(document).ready(function(){
+          $("#logInForm").submit(function(event){
+              event.preventDefault();
+              var email = $("#emailLogIn").val();
+              var password = $("#pwdLogIn").val();
+              var submit = $("#submit").val();
+              $(".Message").load("../PHP/ValidationLogIn.php",{
+                  email: email,
+                  password: password,
+                  submit: submit
+              });
+          });
+      });
+    </script>
+</head>
+<body class="bodyColor">
+
+    <!-- NAVBAR -->
+    <nav class="navbar container-fluid navbar-expand-lg justify-content-between ">
+      <a href="Welcome.html" class="navbar-brand">&larr;Welcome Page</a>
+      <a class="navbar-brand">WatchList Builder</a>
+        <ul class="navbar-nav ">
+            <li class="nav-item"><a class="nav-link">FAQ</a></li>
+            <li class="nav-item"><a class="nav-link">Contact Us</a></li>
+        </ul>
+    </nav>
+
+  
+      <h1 class="row justify-content-center text-center textColor">
+        Sign Up to Build <br> Your Movie Backlog!  
+      </h1>
+  
+
+    <!-- PAGE CONTENT -->
+<section class="">
+  <div class="container py-5 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+        <form id="logInForm" class=" shadow-md" method="post" action="../PHP/ValidationLogIn.php">
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <input type="email" name="email" id="emailLogIn" class="form-control form-control-lg" />
+            <label class="form-label" for="emailLogIn">Email address</label>
+          </div>
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+            <input type="password" name="password" id="pwdLogIn" class="form-control form-control-lg" />
+            <label class="form-label" for="pwdLogIn">Password</label>
+          </div>
+          
+          <p class="text-center text-muted mt-2 mb-0">Don't have an account? 
+          <a href="SignUp.html"class="fw-bold text-body"><u>Sign up here</u></a></p>
+          <br>
+          <!-- ERROR MESSAGE -->
+          <div class="Message"></div>
+          <!-- Submit button -->
+          <button type="submit" id="submit" name="submit" class="btn btn-primary btn-lg btn-block">Log In</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+</body>
+</html>
